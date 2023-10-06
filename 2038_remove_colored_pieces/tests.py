@@ -5,7 +5,8 @@ class TestSolution:
     colors_cases = [("AAABABB",True),
                      ("AA",False),
                      ("ABBBBBBBAAA",False),
-                     ("AAAAABBBBBBAAAAA",True)
+                     ("AAAAABBBBBBAAAAA",True),
+                     ("AAAAABBB",True)
                      ]
     
     @pytest.mark.parametrize(("colors", "expected"), colors_cases)

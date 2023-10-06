@@ -1,36 +1,21 @@
 class Solution:
 
-    ALICE_COLOR = 'A'
-    BOB_COLOR = 'B'
+    ALICE_COLOR = 'AAA'
+    BOB_COLOR = 'BBB'
 
     def winnerOfGame(self, colors: str) -> bool:
-        listBeforeMove = colors
-        for iterationNum in range(1, len(colors)):
-            if self._isAliceMove(iterationNum):
-                listAfterMove = self._makeMove(listBeforeMove, self.ALICE_COLOR)
-                if listAfterMove == listBeforeMove:
-                    return False
-                else: listBeforeMove = listAfterMove
-            else: 
-                listAfterMove = self._makeMove(listBeforeMove, self.BOB_COLOR)
-                if listAfterMove == listBeforeMove:
-                    return True
-                else: listBeforeMove = listAfterMove
-
-    def _isAliceMove(self, moveNumber) -> bool:
-        return moveNumber % 2 != 0
-
-    def _makeMove(self, colors: str, query: str):
-        colorsAfterReplace = colors
-        occurences = self._find_symbol_occurences(colors, query)
-        if occurences and occurences[0] < len(colorsAfterReplace) - 2:
-            for occurency in occurences:
-                if occurency + 1 in occurences and occurency + 2 in occurences:
-                    colorsAfterReplace = colors[:occurency + 1] + colors[occurency + 2:]
-                    break
-        return colorsAfterReplace
+        alices_occurences = self._find_symbol_occurrences(colors, self.ALICE_COLOR)
+        bobs_occurences = self._find_symbol_occurrences(colors, self.BOB_COLOR)
+        if not alices_occurences:
+            return False
+        if not bobs_occurences:
+            return True
+        if len(alices_occurences) > len(bobs_occurences):
+            return True
+        else:
+            return False
     
-    def _find_symbol_occurences(self, colors: str, query: str):
+    def _find_symbol_occurrences(self, colors: str, query: str):
         iterationNum = 0
         occurencyIndex = 0
         occurences = []
