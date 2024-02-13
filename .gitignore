@@ -1,3 +1,49 @@
+# Visual Studio files
+.vs/
+*.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+
+# Rider files
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.DS_Store
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+*.nuget.props
+*.paket.props
+*.paket.targets
+packages/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+bin/
+obj/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
