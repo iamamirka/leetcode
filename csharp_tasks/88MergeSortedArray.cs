@@ -2,7 +2,7 @@ using FluentAssertions;
 
 namespace csharp_tasks;
 
-// https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150
+// https://leetcode.com/problems/merge-sorted-array
 public class MergeSortedArrays
 {
     public void Merge(int[] nums1, int m, int[] nums2, int n) {
