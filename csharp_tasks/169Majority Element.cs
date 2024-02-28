@@ -8,6 +8,7 @@ public class MajorityElementTask
     public int MajorityElement(int[] nums) {
         var elementsQuantityMap = new Dictionary<int, int>();
 
+        //elementsQuantityMap = nums.GroupBy(x => x).ToDictionary(group => group.Key, group => group.Count());
         foreach(var number in nums)
             if (elementsQuantityMap.ContainsKey(number))
                 elementsQuantityMap[number] = elementsQuantityMap[number] + 1;
